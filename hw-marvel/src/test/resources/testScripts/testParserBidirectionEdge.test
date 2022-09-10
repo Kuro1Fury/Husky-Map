@@ -1,0 +1,7 @@
+# Tests the edge constructed by parser is bi-direction
+
+LoadGraph chars twoNodesOneEdge.csv
+
+FindPath chars Mario Luigi
+
+FindPath chars Luigi Mario

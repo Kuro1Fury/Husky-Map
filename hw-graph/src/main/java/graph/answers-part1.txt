@@ -1,0 +1,115 @@
+## CSE 331 hw-graph Part 1 Questions
+
+## Part 1
+###########################################################################
+
+a. Write an AF and RI for IntQueue1 and IntQueue2.
+
+    ### IntQueue1
+
+    Abstraction Function:
+
+    Abstraction function is
+        A queue of integers such that
+            entries = queue = [n1, n2, ..., n_k] where n1 is the first in and n_k is the last in
+
+
+    Representation Invariant:
+        entries != null
+
+
+
+    ### IntQueue2
+
+    Abstraction Function:
+
+    Abstraction function is
+        A queue of integers such that
+             entries = [n1, n2, ..., n_k]
+             queue = [n_front, ..., n_front+size-1] if size + front <= entries.length
+             queue = [n_front, ..., n_entries.length-1, n_0, ..., n_size+front-entries.length-1]
+                if size + front > entries.length
+                where n_front is the first in and n_front+size-1 is the last in
+
+
+    Representation Invariant:
+        entries != null, 0 <= front < INITIAL_SIZE, size >= 0,
+        0 <= front + size - 1 < INITIAL_SIZE
+
+
+
+b. Group the snapshots of IntQueue2's internal state into groups that have the same abstract state.
+    (a) queue = [1, 2]
+    (b) queue = [2, 3, 4]
+    (c) queue = [1, 2, 3]
+    (d) queue = [1, 2]
+    (e) queue = [1, 2, 3, 4]
+    (f) queue = [1, 2, 3]
+    (g) queue = [1, 2]
+    (h) queue = [2, 3, 4]
+    same abstract state: adg, bh, cf, e
+
+
+
+c. For each signature below, state and justify in 1-2 sentences (per part) whether the method or constructor
+could possibly expose the representation, given the information available. Explain any assumptions you made.
+
+    1. `public int solveEquations(int x, int y, int z)`
+        It does not have representation exposure since int is a primitive data type and cannot be changed.
+
+
+    2. `public String[] decode(boolean slowly)`
+        It might have representation exposure since array of string is mutable if this array is a global variable
+        of the class.
+
+
+    3. `private Date myBirthday()`
+        It might have representative exposure since Date is mutable.
+
+
+    4. `public String toString()`
+        It does not have representative exposure since string is immutable.
+
+
+    5. `public Iterator<Integer> elements()`
+        It might have representative exposure if it is the iterator of one global variable.
+
+
+    6. `public Deck(List<Card> cards)`
+        It might have representative if the reference of list is returned instead of a copy.
+
+
+
+## Part 2
+###########################################################################
+
+Briefly explain why you included the operations you did and why you feel they are a sufficient
+interface to a graph. If your design includes multiple classes or interfaces, explain why you
+included each one; if not, explain whether you considered additional classes and why you decided
+not to include them.
+
+I separate the whole implementation into three classes, Node, Edge, and Graph. It is possible to
+combine Node and Edge together or even implement into a whole super class, but those kinds of
+implementation is much less readable and easy to be messy. In my implementation specifically,
+Node and Edge are immutable. There are getters from each of the classes, which can get information
+of single node or edge. I also implement comparable interface in my edge class in order to compare
+edges through labels for handling situations such as when label stores comparable distance. At the
+contrast, graph is mutable and is constructed by nodes and corresponding edges. Apart from getters,
+there are also some mutable operations that can operate nodes and edges in different ways such as
+add and delete. If there are more operations needed to be implemented such as add a list of nodes,
+they can call these methods to generate more complicated operations.
+
+
+
+## Part 3
+###########################################################################
+
+What was your testing strategy for this assignment? How do your script tests and JUnit tests
+differ from each other (if they do), and why?
+
+I create three test classes corresponds each three ADT classes. For each test file, I test
+each method in that ADT class to make sure all functions work well. And for the greatest
+class graph, I test for different situations which is also written in the script test,
+including a graph with only one node, a graph with a bi-direction edge, a sample complex
+graph and so on.
+

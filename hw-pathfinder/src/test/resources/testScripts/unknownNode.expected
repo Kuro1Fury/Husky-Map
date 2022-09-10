@@ -1,0 +1,12 @@
+# Test unknown nodes
+
+created graph A
+
+added node n1 to A
+
+unknown: n2
+
+unknown: n2
+
+unknown: n2
+unknown: n3

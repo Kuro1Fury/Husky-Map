@@ -1,0 +1,177 @@
+## CSE 331 hw-poly Questions
+## Part 0
+###########################################################################
+
+1. Multiplication Pseudocode
+r = p * q:
+    set r = 0
+    {inv: r = (p_0 + p_1 + ... + p_i-1) * q where p_k is the kth term in p}
+    for each term tp in p
+        set m = 0
+        {inv: m = (q_0 + q_1 + ... + q_j-1) * p_i-1 where q+k is the kth term in q}
+        for each term tq in q
+            insert the product of t_p and t_q into m as a new term
+        add the polynomial m into r using add function defined previously
+
+2. Division Pseudocode
+m = p / q, n = p % q
+    set m = 0
+    set n = p
+    set d = degree of n - degree of q
+    {inv: d + degree of q = degree of n AND n = p - q * m}
+    while d >= 0
+        set k = the coefficient of the term with the highest degree of n / that of q
+        set t = a new term with coefficient k and degree of d
+        set s = product of t and q
+        add the polynomial t into m using add function defined previously
+        subtract n by s
+        update d with the new degree of n - degree of q
+
+
+3. Division Example: (x3+x-1) / (x+1) = x2-x+2
+m = 0
+n = x3+x-1
+d = 3-1 = 2
+while d >= 0
+    Iteration 1: m = 0, n = x3+x-1, d = 2, q = x+1,
+        k = 1/1 = 1
+        t = x2
+        s = x3+x2
+        m = x2
+        n = x3+x-1-(x3+x2) = -x2+x-1
+        d = 2-1 = 1
+    Iteration 2: m = x2, n = -x2+x-1, d = 1, q = x+1,
+        k = -1/1 = -1
+        t = -x
+        s = -x2-x
+        m = x2-x
+        n = -x2+x-1-(-x2-x) = 2x-1
+        d = 0
+    Iteration 3: m = x2-x, n = 2x-1, d = 0, q = x+1,
+        k = 2/1 = 2
+        t = 2
+        s = 2x+2
+        m = x2-x+2
+        n = 2x-1-(2x+2) = -3
+        d = 0-1 = -1 < 0 end the loop
+    We are done! m = x2-x+2, n = -3
+
+
+
+## Part 1
+###########################################################################
+
+1. Weakened Rep Invariant
+(1) The fourth RatNum constructor no longer needs three lines of code inside
+the else bracket that update n and d by dividing g. Since its function is to
+check the gcd and reduce ratio to the lowest terms to ensure the reduced form.
+Advantage: construction process would be quicker; Disadvantage: large values
+may be stored in the memory, and numerical operation(add, mul, etc.) could
+be more likely to reach the storable maximum number and cause problems.
+
+(2) checkRep no longer needs the if statement, which is to check whether the
+Ratnum is in the lowest form. Advantage: all methods that need to call checkRep
+is quicker, especially situations with huge amounts of operations; Disadvantage:
+same as that of (1).
+
+(3) hashCode method is needed to be changed. It is necessary to call gcd method
+to reduce numer and denom into the lowest form before return the hashCode to
+generate the same hashCode for each equal value. Advantage: Instead of check
+the number each time during operations, one check in hashCode would be quicker;
+Disadvantage: same as that of (1).
+
+(4) equals method is needed to be changed. It is necessary to call gcd method
+to reduce numer and denom into the lowest form before compare the numer and
+denom. Advantage: Instead of check the number each time during operations, one
+check in equal would be quicker. Disadvantage: same as that of (1).
+
+(5) toString method is needed to be changed. It is necessary to call gcd
+method to reduce numer and denom into the lowest form before hand to ensure
+the returned string is in reduced form. Advantage: Instead of check the number
+each time during operations, one check in toString would be quicker.
+Disadvantage: same as that of (1).
+
+
+
+2. Alternate add, sub, mul, div
+Since the clean and reduction process are written in the constructor, the
+returned value might not satisfy either reduced form or denom >= 0, for
+example,  after div. For instance, (-1/4) / (-3/2) would generate -2/-12,
+which violates the specification. As a result, some methods like equals and
+toString would give a different result.
+
+
+3. Constructor checkReps
+Two RatNums ensures that whatever query, the constructed numer and denom
+always  meet the requirement. Moreover, only RatNum constructor can change
+the two global variables since it is ADT, there is no other mutators, and
+the instance variables are final. Therefore, checkRep is sufficient at the
+end of the constructors.
+
+
+
+## Part 2
+###########################################################################
+
+1. Calls to checkRep in RatTerm
+I include call to checkRep at the end of constructors. It is because there
+is still no other mutators in other methods, and the two instance variables
+are set to be final. So the only change of the variables are the constructors.
+Therefore, it is sufficient to only call checkRep at the end of constructors.
+
+
+2. Weakened Rep Invariant
+(1) The constructor no longer needs to change expt if coeff is equal to zero.
+Advantage: Construction process would be quicker; Disadvantage: Some big
+numbers may be constantly stored in the class.
+
+(2) The toString method needs to be changed. Specifically, to replace expt with
+0 if coeff is equal to zero. Advantage: quicker during operations; Disadvantage:
+possible big number stored and slightly slower calling toString.
+
+(3) The hashcode might need to change. Specifically, to replace expt with 0 if
+coeff is equal to zero. Advantage: quicker during operations; Disadvantage:
+possible big number stored and slightly slower calling hashCode.
+
+(4) The equals is needed to be changed, or it might generate a wrong result.
+One solution is to update expt if coeff is equal to zero, or it can return true
+of both coeff are equal to zero without checking if expt are equal to each other.
+Advantage: quicker during operations; Disadvantage: possible big number stored and
+slightly slower calling equals.
+
+
+
+3. Alternate Rep Invariant
+(1) checkRep is needed to check whether expt is equal to 0 when coeff is equal to
+NaN. Advantage: ensure the expt is equal to 0 to make the program clean;
+Disadvantage: slower construction process each time calling checkRep.
+
+(2) RatTerm is needed to be changed. Specifically, the if condition should
+additionally check if coeff is equal to NaN to decide whether to change expt
+to 0. Advantage: ensure the expt is equal to 0 to make the program clean;
+Disadvantage: slower construction process.
+
+
+## Part 3
+###########################################################################
+
+1. Calls to checkRep in RatPoly
+I include checkRep at the end of constructor and mul as well as div. Although
+mul and div are not mutators still, but these methods only involve the RatPoly
+class in the loop body, therefore I include the checkRep at the end of these
+two methods in my implementation.
+
+
+2. Alternate Representation
+Advantage of alternative implementation: Instead of calling and operating
+RatTerm class each time, it would be easier to operate on coeff and expt
+directly, for instance, the incremExpt and scaleCoeff.
+Disadvantage: Firstly, two lists would cost more memory and space. Secondly,
+it is kind of messy when doing numerical operation, such as eliminating zero
+term in add and mul, since it is needed to dealing with two lists at a time.
+From my perspective, I think the current representation is better. Except from
+avoiding the waste of space, the current implementation is more intuitive,
+and RatTerm and functions in it furthermore the validity of the code which to
+eliminate possible bug and special situations.
+
+

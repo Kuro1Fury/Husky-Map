@@ -1,0 +1,8 @@
+# Tests unknown nodes can be detected
+
+CreateGraph g
+AddNode g n1
+
+FindPath g n1 n2
+
+FindPath g n3 n2

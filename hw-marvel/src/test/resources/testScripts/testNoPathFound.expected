@@ -1,0 +1,12 @@
+# Tests edge case that with no path
+
+created graph A
+
+added node n1 to A
+added node n2 to A
+
+path from n1 to n2:
+no path found
+
+path from n2 to n1:
+no path found

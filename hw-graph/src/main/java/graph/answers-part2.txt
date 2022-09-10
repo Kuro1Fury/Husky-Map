@@ -1,0 +1,69 @@
+## CSE 331 hw-graph Part 2 Questions
+
+NOTE: This file is used as part of hw-graph-part2, and is not due as part of the hw-graph-part1
+submission. You may leave it blank for hw-graph-part1.
+
+## Part 1
+###########################################################################
+
+A few examples of possible Graph representations:
+
+    A: A collection of nodes and a collection of edges.
+    B: An adjacency list, in which each node is associated with a list of its outgoing edges.
+    C: An adjacency matrix, which explicitly represents, for every pair ⟨A,B⟩ of nodes, whether there 
+       is a link from A to B, and how many.
+
+1. In two or three sentences, explain an advantage and a disadvantage of each of the
+representations listed above (for example, in terms of runtime complexity, space
+complexity, or ease of implementation).
+
+For A
+Advantage: Easy access to Nodes and Edges separately, which may make the operations more convenient.
+Disadvantage: Cost of memory and storage. Some operations which need to operate nodes and edges at the
+same time might be messy. Some operations like searching may cost more time.
+
+For B
+Advantage: Saves space O(V+E). Easy to implement and preform changes to the graph.
+Disadvantage: Not efficient for some operations such as search for edge of two particular nodes.
+
+For C
+Advantage: Easy to implement, and have time efficiency, which is O(1) for removing an edge.
+Disadvantage: Low memory efficiency, adding vertex for O(V^2). And there are empty space for empty places
+with no nodes. In addition, hard to have more than one connection between two nodes.
+
+
+2. In two to three sentences, describe the representation you chose and explain why you
+chose it. If you chose to use a different representation than one of the three we described
+above, be sure to list its advantages and disadvantages, too.
+
+The representation I chose is a HashMap, which keys are starting nodes, and values are HashSet of Edge ADTs.
+I choose it because it is also easy to implement with clear structure(Node and Edge ADTs), and with high time
+efficiency due to HashMap and HashSet properties.
+Advantage: High time efficiency: O(1), easy to implement. Easy to perform operations such as find all edges
+from a particular node. Allow and easy to change of multiple types of maps, such as self pointing edges and
+multiple edges connecting two nodes
+Disadvantage: Low memory efficiency.
+
+
+
+## Part 4
+###########################################################################
+
+    (Please keep your answers brief and to-the-point.)
+
+1. Describe any new tests you added and why you added them, or why you feel that your original
+tests alone are sufficient.
+I change my deleteNode test to test whether edges that connect to the to be deleted node are also
+deleted. And I add test for new methods I add like clear(). And I add simple script test cases like
+graph with only one node, two children, and so no, since it is always good to test interesting trivial
+cases before getting complex. Till now, I think they are sufficient since it includes tests of nodes,
+edges, and graph as a whole, with basic situations to complex ones.
+
+
+
+2. Did you make any changes to your specifications as you were implementing your Graph? (yes/no)
+If yes, describe your changes and why you made them.
+Yes.
+I changed my original implementation that includes three top level classes which are Node, Edge,
+and Graph into one with nested class in Graph since it has a better style. And I add a method called
+clear to clear the graph. Moreover, I add missing specifications and make them complete.

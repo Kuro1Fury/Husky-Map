@@ -1,0 +1,26 @@
+# sampleGrpah test
+# Tests that a graph can be created which is identical with the graph of
+# Figure 1 in the spec. There are four nodes: a, b, c, and d, and there
+# are four edges: a to a, a to b, b to a, and b to c.
+
+# Create a graph
+CreateGraph graph1
+
+# Add four nodes
+AddNode graph1 a
+AddNode graph1 b
+AddNode graph1 c
+AddNode graph1 d
+
+# Add four edge
+AddEdge graph1 a a e1
+AddEdge graph1 a b e2
+AddEdge graph1 b a e3
+AddEdge graph1 b c e4
+
+# Print the nodes in the graph and the outgoing edges from a, b, c, and d
+ListNodes graph1
+ListChildren graph1 a
+ListChildren graph1 b
+ListChildren graph1 c
+ListChildren graph1 d

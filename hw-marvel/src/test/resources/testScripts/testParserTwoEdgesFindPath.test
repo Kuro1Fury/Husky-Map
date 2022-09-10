@@ -1,0 +1,7 @@
+# Tests that the path between two edges in the graph constructed by parser can be found
+
+LoadGraph chars threeNodesTwoEdges.csv
+
+FindPath chars Luigi Link
+
+FindPath chars Link Luigi

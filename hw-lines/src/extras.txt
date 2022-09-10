@@ -1,0 +1,14 @@
+CSE 331 Homework.  Answers to written questions.
+Edit this file to supply your answers.
+
+Name:  Allan Ji
+
+Describe any additional functionality you added to your application, or any
+significant changes you made to the starter code beyond the basic requirements
+of the assignment, below:
+
+I do not have any significant change to the starter code.
+I add two functions which are two buttons. One button called "Add" can directly
+add a line on the current map. The other button called "SHOW UW" can draw a UW
+symbol on the map.
+

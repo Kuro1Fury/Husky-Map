@@ -1,0 +1,5 @@
+# Test the parser on a graph that contains one edge
+
+LoadGraph chars twoNodesOneEdge.csv
+ListChildren chars Mario
+ListChildren chars Luigi

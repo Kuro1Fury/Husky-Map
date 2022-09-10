@@ -1,0 +1,12 @@
+# Test rounded (total cost is not rounded)
+
+CreateGraph A
+
+AddNode A n1
+AddNode A n2
+AddNode A n3
+
+AddEdge A n1 n2 1.00025
+AddEdge A n2 n3 1.00025
+
+FindPath A n1 n3

@@ -1,0 +1,14 @@
+# Tests that the path between two edges in the graph can be found
+
+CreateGraph A
+
+AddNode A n1
+AddNode A n2
+AddNode A n3
+AddEdge A n1 n2 1to2
+AddEdge A n2 n3 2to3
+
+FindPath A n1 n3
+
+FindPath A n3 n1
+

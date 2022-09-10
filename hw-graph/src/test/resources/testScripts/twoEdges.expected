@@ -1,0 +1,6 @@
+# Test that two edges can be added
+
+created graph A
+added node n1 to A
+added edge e1 from n1 to n1 in A
+added edge e2 from n1 to n1 in A

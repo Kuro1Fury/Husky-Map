@@ -1,0 +1,5 @@
+# Find a path in an empty graph
+
+CreateGraph A
+
+FindPath A n1 n2

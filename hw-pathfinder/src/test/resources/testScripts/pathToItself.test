@@ -1,0 +1,7 @@
+# Test the path finding from a node to itself
+
+CreateGraph A
+
+AddNode A n1
+
+FindPath A n1 n1

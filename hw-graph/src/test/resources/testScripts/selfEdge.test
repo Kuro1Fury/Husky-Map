@@ -1,0 +1,16 @@
+# selfEdge test
+# Tests that a normal graph can be created, with a node n1. There is
+# one edges, n1 to n1, to test whether self point edge is allowed.
+
+# Create a graph
+CreateGraph graph1
+
+# Add one node
+AddNode graph1 n1
+
+# Add one edges
+AddEdge graph1 n1 n1 e1
+
+# Print the nodes in the graph and the outgoing edges from n1 and n2
+ListNodes graph1
+ListChildren graph1 n1

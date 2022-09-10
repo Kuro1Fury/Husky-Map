@@ -1,0 +1,9 @@
+# Test that a node with two children work properly
+
+CreateGraph A
+AddNode A n1
+AddNode A n2
+AddEdge A n1 n1 e1
+AddEdge A n1 n2 e2
+ListNodes A
+ListChildren A n1

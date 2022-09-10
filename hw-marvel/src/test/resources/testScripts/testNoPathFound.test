@@ -1,0 +1,10 @@
+# Tests edge case that with no path
+
+CreateGraph A
+
+AddNode A n1
+AddNode A n2
+
+FindPath A n1 n2
+
+FindPath A n2 n1

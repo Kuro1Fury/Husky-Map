@@ -1,0 +1,13 @@
+# Test that the founded path is the shortest one
+
+CreateGraph A
+
+AddNode A n1
+AddNode A n2
+AddNode A n3
+
+AddEdge A n1 n2 1.0
+AddEdge A n2 n3 1.0
+AddEdge A n1 n3 1.5
+
+FindPath A n1 n3

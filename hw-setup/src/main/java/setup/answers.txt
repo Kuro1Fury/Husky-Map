@@ -1,0 +1,28 @@
+## CSE 331 hw-setup Questions
+## Part 6
+
+1. Why did Fibonacci fail the testThrowsIllegalArgumentException< test? What (if anything) did
+you have to do to fix it? If you did not have to change anything to fix this issue, explain why.
+
+The condition of the first if statement was set to n <= 0 and to determine whether the input
+number is negative. In this case, 0 is involved to trigger the error, however, 0 is not a negative
+number so should not throw the error. Therefore, the if condition should be revised into n < 0.
+
+
+2. Why did Fibonacci fail the testBaseCase test? What (if anything) did you have to do to fix
+it? If you did not have to change anything to fix this issue, explain why.
+
+Due to the same reason, if the first if condition is set to n <= 0, then 0 would trigger the
+error instead of returning the correct value: 1. To fix the issue, the condition of the first
+if statement should be n < 0.
+
+3.Why did Fibonacci fail the testInductiveCase test? What (if anything) did you have to do to
+fix it? If you did not have to change anything to fix this issue, explain why.
+
+There are two places need to be changed. First, the condition of the second else if statement was
+n <= 2, therefore the returned value of n = 2 is 1, which is supposed to be 2. Second, the return
+statement inside else was the minus of two values, which is supposed to be the sum of the two values
+according to the definition of Fibonacci, therefore, it fails against rest of the tests. To fix the
+issue, the condition of else if statement should be n <= 1, and "-" should be revised to be "+" for
+the return statement.
+

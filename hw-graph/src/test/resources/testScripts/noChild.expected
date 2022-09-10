@@ -1,0 +1,5 @@
+# Tests that a graph can be created, a node can be added, and listEdge works
+
+created graph A
+added node n1 to A
+the children of n1 in A are:

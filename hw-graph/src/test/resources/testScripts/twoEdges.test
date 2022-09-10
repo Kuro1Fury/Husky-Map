@@ -1,0 +1,6 @@
+# Test that two edges can be added
+
+CreateGraph A
+AddNode A n1
+AddEdge A n1 n1 e1
+AddEdge A n1 n1 e2

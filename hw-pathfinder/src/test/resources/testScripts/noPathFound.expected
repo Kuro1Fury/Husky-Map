@@ -1,0 +1,9 @@
+# Test no path found
+
+created graph A
+
+added node n1 to A
+added node n2 to A
+
+path from n1 to n2:
+no path found

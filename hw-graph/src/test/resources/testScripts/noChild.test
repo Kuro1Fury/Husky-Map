@@ -1,0 +1,5 @@
+# Tests that a graph can be created, a node can be added, and listEdge works
+
+CreateGraph A
+AddNode A n1
+ListChildren A n1

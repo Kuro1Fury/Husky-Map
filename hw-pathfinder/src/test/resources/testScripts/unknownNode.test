@@ -1,0 +1,11 @@
+# Test unknown nodes
+
+CreateGraph A
+
+AddNode A n1
+
+FindPath A n1 n2
+
+FindPath A n2 n1
+
+FindPath A n2 n3

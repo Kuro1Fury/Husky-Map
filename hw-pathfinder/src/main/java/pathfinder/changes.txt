@@ -1,0 +1,5 @@
+Briefly list any changes you made to your graph class during hw-pathfinder, and why you made those changes.
+
+I changed the nested edge class inside my graph ADT to be non-static. I understand keep it static is better
+than declaring it non-static, however, I think in this particular case it is needed to  ensure the node
+stored the node in the Graph ADT has the same type as the node in Edge ADT. Therefore, I claim it non-static.

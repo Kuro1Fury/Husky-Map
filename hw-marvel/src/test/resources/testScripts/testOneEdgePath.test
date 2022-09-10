@@ -1,0 +1,12 @@
+# Tests that one edge graph works as expected
+
+CreateGraph A
+
+AddNode A n1
+AddNode A n2
+
+AddEdge A n1 n2 theOnlyEdge
+
+FindPath A n1 n2
+
+FindPath A n2 n1

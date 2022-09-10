@@ -1,0 +1,5 @@
+# Test empty graph can output correct path
+
+CreateGraph chars
+
+FindPath chars n1 n2

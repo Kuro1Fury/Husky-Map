@@ -1,0 +1,6 @@
+# Two nodes test
+# Tests that a graph with two nodes can be generated
+
+CreateGraph A
+AddNode A n1
+AddNode A n2

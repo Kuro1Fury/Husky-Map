@@ -1,0 +1,9 @@
+# Test that a node with two children work properly
+
+created graph A
+added node n1 to A
+added node n2 to A
+added edge e1 from n1 to n1 in A
+added edge e2 from n1 to n2 in A
+A contains: n1 n2
+the children of n1 in A are: n1(e1) n2(e2)

@@ -1,0 +1,10 @@
+# Test that the path is the shortest based on label name
+
+CreateGraph A
+
+AddNode A n1
+AddNode A n2
+AddEdge A n1 n2 Edge1
+AddEdge A n1 n2 Edge2
+
+FindPath A n1 n2

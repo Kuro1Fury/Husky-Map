@@ -1,0 +1,5 @@
+# Tests that a graph can be created, a node can be added, and listNode works
+
+created graph A
+added node n1 to A
+A contains: n1

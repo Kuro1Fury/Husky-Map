@@ -1,0 +1,12 @@
+# Test that the path is the shortest based on distance
+
+CreateGraph A
+
+AddNode A n1
+AddNode A n2
+AddNode A n3
+AddEdge A n1 n2 Edge1
+AddEdge A n2 n3 Edge3
+AddEdge A n1 n3 Edge2
+
+FindPath A n1 n3

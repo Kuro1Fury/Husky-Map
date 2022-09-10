@@ -1,0 +1,13 @@
+# Test that the path is the shortest based on distance
+
+created graph A
+
+added node n1 to A
+added node n2 to A
+added node n3 to A
+added edge Edge1 from n1 to n2 in A
+added edge Edge3 from n2 to n3 in A
+added edge Edge2 from n1 to n3 in A
+
+path from n1 to n3:
+n1 to n3 via Edge2

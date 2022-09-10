@@ -1,0 +1,16 @@
+# selfEdge test
+# Tests that a normal graph can be created, with a node n1. There is
+# one edges, n1 to n1, to test whether self point edge is allowed.
+
+# Create a graph
+created graph graph1
+
+# Add one node
+added node n1 to graph1
+
+# Add one edges
+added edge e1 from n1 to n1 in graph1
+
+# Print the nodes in the graph and the outgoing edges from n1 and n2
+graph1 contains: n1
+the children of n1 in graph1 are: n1(e1)

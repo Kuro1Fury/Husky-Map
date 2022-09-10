@@ -1,0 +1,5 @@
+# Test empty graph can output correct path
+
+LoadGraph chars empty.csv
+
+FindPath chars n1 n2

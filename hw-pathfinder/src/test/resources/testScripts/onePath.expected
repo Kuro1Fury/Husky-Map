@@ -1,0 +1,12 @@
+# Test two nodes with only one edge
+
+created graph A
+
+added node n1 to A
+added node n2 to A
+
+added edge 1.000 from n1 to n2 in A
+
+path from n1 to n2:
+n1 to n2 with weight 1.000
+total cost: 1.000

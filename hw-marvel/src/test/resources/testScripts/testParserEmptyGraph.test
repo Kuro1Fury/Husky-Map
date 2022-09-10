@@ -1,0 +1,3 @@
+# Test the parser on an empty graph
+
+LoadGraph chars empty.csv

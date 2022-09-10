@@ -1,0 +1,20 @@
+# bidirectionEdge test
+# Tests that a normal graph can be created, with two non-null nodes,
+# Node a, Node b, and Node c. There are two edges, (1) n1 to n2, (2)
+# n2 to n1, to test whether bi-direction edge is allowed.
+
+# Create a graph
+CreateGraph graph1
+
+# Add two nodes
+AddNode graph1 n1
+AddNode graph1 n2
+
+# Add two edges
+AddEdge graph1 n1 n2 e1
+AddEdge graph1 n2 n1 e2
+
+# Print the nodes in the graph and the outgoing edges from n1 and n2
+ListNodes graph1
+ListChildren graph1 n1
+ListChildren graph1 n2

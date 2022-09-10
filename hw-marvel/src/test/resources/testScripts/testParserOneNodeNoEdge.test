@@ -1,0 +1,4 @@
+# Test the parser on a graph that contains no edge
+
+LoadGraph chars oneNodeNoEdge.csv
+ListChildren chars Mario

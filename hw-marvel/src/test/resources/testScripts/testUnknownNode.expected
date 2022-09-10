@@ -1,0 +1,9 @@
+# Tests unknown nodes can be detected
+
+created graph g
+added node n1 to g
+
+unknown: n2
+
+unknown: n3
+unknown: n2

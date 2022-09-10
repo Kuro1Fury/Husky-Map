@@ -1,0 +1,7 @@
+# twoGraphs test
+# Test that two graphs can be created at the same time
+
+# Create graphs
+CreateGraph graph1
+CreateGraph graph2
+

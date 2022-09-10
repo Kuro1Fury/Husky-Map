@@ -1,0 +1,14 @@
+# Tests that one edge graph works as expected
+
+created graph A
+
+added node n1 to A
+added node n2 to A
+
+added edge theOnlyEdge from n1 to n2 in A
+
+path from n1 to n2:
+n1 to n2 via theOnlyEdge
+
+path from n2 to n1:
+no path found

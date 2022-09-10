@@ -1,0 +1,9 @@
+Briefly list any changes you made to your graph class during hw-marvel, and why you made those changes.
+
+First, based on the feedback on GradeScope, I delete compareTo method implemented from Comparable, I
+change the listChildren method to avoid representation exposure, and adjust the if statement in checkRep
+to enable check that cost nothing even if the debug flag is off. And I also comment deleteNode and
+deleteEdge since they are useless currently.
+Moreover, I change my overall data structure. Originally, I have nested classes involving edge and node
+inside graph class, now I delete node class and make a single string representing a node to reduce the
+runtime and increase the efficiency.

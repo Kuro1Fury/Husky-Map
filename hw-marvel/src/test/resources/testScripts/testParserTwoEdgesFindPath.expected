@@ -1,0 +1,11 @@
+# Tests that the path between two edges in the graph constructed by parser can be found
+
+loaded graph chars
+
+path from Luigi to Link:
+Luigi to Mario via Super-Mario-Bros
+Mario to Link via Super-Smash-Bros
+
+path from Link to Luigi:
+Link to Mario via Super-Smash-Bros
+Mario to Luigi via Super-Mario-Bros

@@ -1,0 +1,5 @@
+# Test the parser on a graph that contains one edge
+
+loaded graph chars
+the children of Mario in chars are: Luigi(Super-Mario-Bros)
+the children of Luigi in chars are: Mario(Super-Mario-Bros)

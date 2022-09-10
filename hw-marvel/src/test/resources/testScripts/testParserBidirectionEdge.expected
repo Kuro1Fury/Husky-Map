@@ -1,0 +1,9 @@
+# Tests the edge constructed by parser is bi-direction
+
+loaded graph chars
+
+path from Mario to Luigi:
+Mario to Luigi via Super-Mario-Bros
+
+path from Luigi to Mario:
+Luigi to Mario via Super-Mario-Bros

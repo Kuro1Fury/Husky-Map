@@ -1,0 +1,10 @@
+# Test the path finding from a node to itself which has a edge to itself
+
+created graph A
+
+added node n1 to A
+
+added edge 1.000 from n1 to n1 in A
+
+path from n1 to n1:
+total cost: 0.000
